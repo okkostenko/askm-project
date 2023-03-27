@@ -1,0 +1,73 @@
+html{
+    background-color: #020202;
+    color:#fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+}
+
+img{
+    margin-right: 16px;
+}
+
+h2{
+    font-size: 36px;
+}
+
+label{
+    font-size: 20px;
+}
+
+.title{
+    display: block;
+    color:#1fa0aa;
+    font-size: 24px;
+    font-weight: 600;
+    margin-block: 16px;
+    text-transform: uppercase;
+}
+
+#checklist{
+    display:grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 16px;
+    margin-bottom: 44px;
+}
+
+.window{
+    width:80%;
+    margin-inline: 10%;
+    /* height: 60%; */
+    position: absolute;
+    top:30%;
+}
+
+.DateInput_input{
+    background-color: #181818;
+    color:#fff;
+    border: 2px solid #181818;
+}
+
+.DateRangePickerInput__withBorder{
+    border:none;
+    border-bottom: 1px solid #1fa0aa;
+    margin-bottom: 16px;
+}
+
+.DateRangePickerInput{
+    background-color: #181818;
+}
+
+.DateRangePickerInput_arrow_svg{
+    fill:#1fa0aa;
+}
+
+#tab-content{
+    padding: 16px;
+    border:2px solid #1fa0aa;
+}
+
