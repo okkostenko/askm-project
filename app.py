@@ -1,26 +1,18 @@
-import numpy as np
 import pandas as pd
-from datetime import date
 from dash import Dash, html, dcc, Input, Output
-import dash_bootstrap_components as dbc
 import plotly.express as px
 import warnings
 
-from kostenko_km93_RGR import sarimax
+from model import sarimax
 
 warnings.filterwarnings('ignore')
 
-# external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css', ]
 app = Dash(__name__)
 
-data=pd.read_csv('day_wise.csv')
+data=pd.read_csv('./data/day_wise.csv')
 covid_df=data.copy()
 covid_df['Date']=pd.to_datetime(covid_df['Date']).dt.date
 model=sarimax()
-# min_date=covid_df['Date'].min()
-# max_date=covid_df['Date'].max()
-# n_days=len(covid_df['Date'].unique())
-# print(int(min_date), max_date)
 
 tab_style={
     'border':'none',
@@ -40,7 +32,6 @@ tab_style_selected={
 app.layout=html.Div(children=[
     html.Div(children=[
         html.Div(children=[
-            #image
             html.Img(
                     src='https://ouch-cdn2.icons8.com/ekBfgLTi0oQ13z-HmzN95Y1var5PgDX0kO-4ac9RF94/rs:fit:256:256/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNDc4/LzIyOTVhMGJjLTZk/MmItNDBkMS1hNDk4/LTA5YzQ0YWU3M2Y1/OC5zdmc.png',
                     width=50,
@@ -49,7 +40,6 @@ app.layout=html.Div(children=[
         ],
         className='header'),
         dcc.Tabs(id='tabs', value='tab-1', children=[
-            #style=tab_style, selected_style=tab_style_selected
             dcc.Tab(label='Data Visualization', value='tab-1', style=tab_style, selected_style=tab_style_selected),
             dcc.Tab(label='Forcasting', value='tab-2', style=tab_style, selected_style=tab_style_selected)
         ]),
