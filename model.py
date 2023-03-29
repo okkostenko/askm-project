@@ -44,7 +44,7 @@ def plot_results(df_test, df):
 
 def build_model(df_train):
     sarimax_model=SARIMAX(df_train['New cases'], order=(0, 1, 2), seasonal_order=(1, 2, 3, 7))
-    sarimax_model_fit=sarimax_model.fit()
+    sarimax_model_fit=sarimax_model.fit(disp=0)
 
     return sarimax_model_fit
 
