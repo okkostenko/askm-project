@@ -3,5 +3,4 @@ plotly
 dash
 statsmodels
 sklearn
-warnings
 gunicorn 
