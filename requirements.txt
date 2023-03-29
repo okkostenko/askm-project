@@ -3,6 +3,5 @@ plotly
 dash
 statsmodels
 sklearn
-itertools
 warnings
 gunicorn 
