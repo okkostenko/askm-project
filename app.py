@@ -8,6 +8,7 @@ from model import sarimax
 warnings.filterwarnings('ignore')
 
 app = Dash(__name__)
+server=app.server
 
 data=pd.read_csv('./data/day_wise.csv')
 covid_df=data.copy()
@@ -120,7 +121,7 @@ def forecast(start_date, end_date):
     fig=px.line(dates, x='Dates', y=['Forecast'], template="plotly_dark")
     return fig
 
-server=app.run_server()
+# server=app.run_server()
 
 if __name__=='__main__':
     app.run_server(debug=False)
