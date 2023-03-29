@@ -5,3 +5,4 @@ statsmodels
 sklearn
 itertools
 warnings
+gunicorn 
