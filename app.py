@@ -8,7 +8,7 @@ from model import sarimax
 warnings.filterwarnings('ignore')
 
 app = Dash(__name__)
-# server=app.server()
+server=app.run_server()
 
 data=pd.read_csv('./data/day_wise.csv')
 covid_df=data.copy()
